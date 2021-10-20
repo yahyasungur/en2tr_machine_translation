@@ -1,0 +1,38 @@
+<doctype html>
+<html>
+<title>Jotform Machine Translation | Form Creator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+	<header class="w3-container w3-teal">
+	  <h1>Jotform Machine Translation</h1>
+	</header>
+	
+	<div class="w3-container w3-half w3-margin-top">
+	<form class="w3-container w3-card-4" method="post" action="/add">
+		<dl>
+			<p>
+				<input name="inputName" value="" type="text" placeholder="Form URL" autocomplete="off" class="w3-input" type="text" style="width:90%" required>
+			</p>
+		</dl>
+		<p>
+			<button class="w3-button w3-section w3-teal w3-ripple" type="submit" value="Create"> Create translated HTML </button>
+		</p>
+
+		<p>
+			{% with messages = get_flashed_messages() %}
+			  {% if messages %}
+				<ul class=flashes>
+				{% for message in messages %}
+				  <li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			  {% endif %}
+			{% endwith %}
+		</p>
+	</form>
+	</div>
+
+</body>
+</html> 
